@@ -1,0 +1,52 @@
+<form (ngSubmit)="dodajRestoran()" #restaurantForm="ngForm">
+  <label>
+    Naziv restorana:
+    <input type="text" [(ngModel)]="noviRestoran.restaurantName" name="restaurantName" required />
+  </label>
+
+  <label>
+    Otvoren:
+    <input type="checkbox" [(ngModel)]="noviRestoran.isOpen" name="isOpen" />
+  </label>
+
+  <fieldset>
+    <legend>Adresa</legend>
+    <input type="text" [(ngModel)]="noviRestoran.address.street" name="street" placeholder="Ulica" required />
+    <input type="text" [(ngModel)]="noviRestoran.address.city" name="city" placeholder="Grad" required />
+    <input type="text" [(ngModel)]="noviRestoran.address.postalCode" name="postalCode" placeholder="Poštanski broj" />
+    <input type="text" [(ngModel)]="noviRestoran.address.houseNumber" name="country" placeholder="Broj ulice" />
+  </fieldset>
+
+  <label>
+    Ocjena korisnika:
+    <input type="number" [(ngModel)]="noviRestoran.averageCustomerRating" name="averageCustomerRating" step="0.1" min="0" max="5" />
+  </label>
+
+  <label>
+    Max narudžbi:
+    <input type="number" [(ngModel)]="noviRestoran.maxOrders" name="maxOrders" min="0" />
+  </label>
+
+  <label>
+    Michelin zvjezdice:
+    <input type="number" [(ngModel)]="noviRestoran.michelinStar" name="michelinStar" min="0" max="3" />
+  </label>
+
+  <label>
+    Kratak opis:
+    <textarea [(ngModel)]="noviRestoran.kratakOpis" name="kratakOpis"></textarea>
+  </label>
+
+  <fieldset>
+    <legend>Kontakt</legend>
+    <input type="text" [(ngModel)]="noviRestoran.contact.phone" name="phone" placeholder="Telefon" />
+    <input type="email" [(ngModel)]="noviRestoran.contact.email" name="email" placeholder="Email" />
+  </fieldset>
+
+  <label>
+    Prosječno vrijeme dostave (ISO 8601):
+    <input type="text" [(ngModel)]="noviRestoran.averageDeliveryTime" name="averageDeliveryTime" />
+  </label>
+
+  <button type="submit">Dodaj restoran</button>
+</form>

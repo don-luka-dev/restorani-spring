@@ -1,0 +1,50 @@
+:host {
+  display: block;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+th, td {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #fafafa;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+h2 {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.layout-container {
+  display: contents;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}

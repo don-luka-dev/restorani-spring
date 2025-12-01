@@ -1,0 +1,23 @@
+<div *ngIf="restaurant as r" class="detalji-kartica">
+  <h3>{{ r.restaurantName }}</h3>
+  <p><strong>Otvoren:</strong> {{ r.isOpen ? 'Da' : 'Ne' }}</p>
+  <p><strong>Opterećenost:</strong> {{ r.workload }}</p>
+  <p><strong>Adresa:</strong></p>
+  <ul>
+    <li><strong>Ulica:</strong> {{ r.address.street }}</li>
+    <li><strong>Broj:</strong> {{ r.address.houseNumber }}</li>
+    <li><strong>Poštanski broj:</strong> {{ r.address.postalCode }}</li>
+  </ul>
+</div>
+
+<div *ngIf="reviews.length > 0; else noReviews" class="recenzije">
+  <h4>Recenzije</h4>
+  <div *ngFor="let review of reviews" class="review">
+    <h5>{{ review.title }} ({{ review.rating }}/5)</h5>
+    <p>{{ review.text }}</p>
+  </div>
+</div>
+
+<ng-template #noReviews>
+  <p>Trenutno nema recenzija za ovaj restoran.</p>
+</ng-template>

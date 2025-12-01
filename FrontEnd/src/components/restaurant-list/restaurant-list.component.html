@@ -1,0 +1,29 @@
+<div class="layout-container">
+<table>
+  <thead>
+    <tr>
+      <th>Ime restorana</th>
+      <th>Otvoren</th>
+      <th>Opterećenost</th>
+      <th>Akcije</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let restoran of restorani">
+      <td (click)="prikaziDetalje(restoran.id!)" style="cursor: pointer;">{{ restoran.restaurantName }}</td>
+      <td>{{ restoran.isOpen ? 'Da' : 'Ne' }}</td>
+      <td>
+        <span class="circle" [ngStyle]="{ 'background-color': getColor(restoran.workload) }"></span>
+      </td>
+      <td>
+        <app-delete-restaurant [restoranId]="restoran.id!" (restoranObrisan)="refreshList()"></app-delete-restaurant>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 style="margin-top: 40px;">Dodaj novi restoran</h2>
+
+<app-add-restaurant (restoranDodan)="refreshList()"></app-add-restaurant>
+
+</div>
